@@ -77,17 +77,15 @@ public class Main {
     public static void task6 () {
         System.out.println("Задача 6");
         int[ ] arr = generateRandomArray();
-        int minSum = arr[0];
-        int maxSum = arr[0];
-        for (int i = 0; i < arr.length; i++){
-            if (minSum < arr[i]) {
-                minSum += arr[i];
-            }
-            if (maxSum > arr[i]) {
-                maxSum += arr[i];
-            }
+        int min = arr[0];
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++){
+            min = Math.min(min, arr[i]);
         }
-        System.out.println("Минимальная сумма трат за день составила " + minSum + " рублей. Максимальная сумма трат за день составила " + maxSum+ " рублей");
+        for (int i = 1; i < arr.length; i++){
+            max = Math.max(max, arr[i]);
+        }
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей. Максимальная сумма трат за день составила " + max+ " рублей");
         System.out.println("\n");
     }
 
